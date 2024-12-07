@@ -17,3 +17,28 @@ echo "</tr><tr>";
 for ($i = 0; $i < $firstDayOfMonth; $i++) {
   echo "<td></td>";
 }
+
+  for ($day = 1; $day<=$numberOfDays; $day++) {
+    echo "<td>$day</td>";
+
+    if (($day + $firstDayOfMonth) % 7 == 0) {
+      echo "</tr><tr>";
+    }
+  }
+
+  while (($day + $firstDayOfMonth) % 7!=0) {
+    echo "<td></td>";
+    $day++;
+  }
+
+  echo "</tr>";
+  echo "</table><br>";
+}
+
+$year = 2024;
+for ($month = 1; $month <=12; $month++) {
+  drawCalendar($month, $year);
+
+}
+
+?>
